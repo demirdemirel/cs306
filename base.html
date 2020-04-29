@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+</head>
+
+
+<body>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">HungryDB</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="inactive"><a href="{% url 'music:clean_img_session_and_send_to_index'%}">Home</a></li>
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">My Profile <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="{% url 'password_change' %}">Change Password</a></li>
+          <li><a href="{% url 'music:settings'%}">Settings</a></li>
+          <li><a href="{% url 'music:termselect'%}">Gold Selection</a></li>
+        </ul>
+      </li>
+
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a > Remaining Time: </a> </li>
+      <li><a > <p id="demo"></p></a> </li>
+      <li><a href="#"><span class="glyphicon glyphicon-user"></span> Hi, user</a></li>
+      <li><a href="{% url 'music:logout' %}" ><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+      <!--<li><a href="{% url 'password_reset' %}" ><span class="glyphicon glyphicon-user"></span> Forget Password?</a></li>
+      <li><a href="/photo_label/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>-->
+    </ul>
+  </div>
+
+</nav>
+<!--
+<div align="center">
+<div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+  <div class="toast-header">
+    <svg class=" rounded mr-2" width="20" height="20" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice"
+      focusable="false" role="img">
+      <rect fill="#007aff" width="100%" height="100%" /></svg>
+    <strong class="mr-auto">Important Announcement</strong>
+    <small class="text-muted">18:18</small>
+    <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="toast-body">
+    Deadline is postponed
+  </div>
+</div>
+</div>-->
+
+
+<script>
+// Set the date we're counting down to
+var countDownDate = new Date("May 8, 2020 23:55:59").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get today's date and time
+  var now = new Date().getTime();
+
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
+
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  // Output the result in an element with id="demo"
+  document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s ";
+
+  // If the count down is over, write some text
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = "EXPIRED";
+  }
+}, 1000);
+</script>
+
+
+</body>
+
+</html>
