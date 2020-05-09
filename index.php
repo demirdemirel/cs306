@@ -9,7 +9,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
   </head>
 <h3 style="text-align:center;"> Choose From People's Favorite Resturants </h3><br>
-	
+
 <?php
 $db = mysqli_connect('localhost','root','','cs306');
 
@@ -29,6 +29,7 @@ $imgList = getImagesFromDir($root . $path);
 $sql_statement = "SELECT * FROM Restaurant";
 
 $result = mysqli_query($db, $sql_statement);
+echo "<div class=\"container\">";
 echo "<div class=\"card-columns\">";
 while($row = mysqli_fetch_assoc($result))
 {
@@ -52,6 +53,7 @@ while($row = mysqli_fetch_assoc($result))
 
 
 }
+echo "</div>";
 echo "</div>";
 function getImagesFromDir($path) {
     $images = array();
