@@ -48,7 +48,7 @@ if($db->connect_errno > 0){
 
       <?php include 'list_restaurants.php'; ?>
 
-      <form action="sendadmin.php" method="POST">
+      <form action="add_delete_restaurant_form.php" method="POST">
       <select name="ids">
 
       <?php
