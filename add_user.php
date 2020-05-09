@@ -47,7 +47,7 @@ if($db->connect_errno > 0){
 
       <?php include 'list_users.php'; ?>
 
-      <form action="sendadmin.php" method="POST">
+      <form action="add_delete_user_form.php" method="POST">
       <select name="ids">
 
       <?php
