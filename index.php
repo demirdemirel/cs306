@@ -8,6 +8,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
   </head>
+<h3 style="text-align:center;"> Choose From People's Favorite Resturants </h3><br>
+	
 <?php
 $db = mysqli_connect('localhost','root','','cs306');
 
@@ -40,9 +42,9 @@ while($row = mysqli_fetch_assoc($result))
   echo "<div class=\"card\" style=\"width:200px\">";
   echo "<img class=\"card-img-top\" src=\"",$img,"\" alt=\"Card image\" style=\"width:100%\">";
   echo "<div class=\"card-body\">";
-  echo   "<h4 class=\"card-title\">",$name,"</h4>";
-  echo   "<p class=\"card-text\">",$location,  "</p>";
-  echo   "<p class=\"card-text\">",$cuisine,  "</p>";
+ echo   "<h4 class=\"card-title\">",$name,"</h4>";
+  echo   "<p class=\"card-text\"> Located in ",$location,  "</p>";
+  echo   "<p class=\"card-text\"> Cuisine: ",$cuisine,  "</p>";
   echo   "<p class=\"card-text\"> Open time: ",$open,  "</p>";
   echo   "<p class=\"card-text\"> Close time: ",$close,  "</p>";
   echo "</div>";
