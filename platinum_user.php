@@ -21,7 +21,7 @@ if($db->connect_errno > 0){
   <h2>Platinum User Management Panel</h2>
   <div class="row">
     <div class="col-sm-6" style="background-color:lavender;">
-      ADD PLATINUM MEMBER USER
+      ADD PLATINUM USER
 
       <?php include 'list_users.php'; ?>
 
