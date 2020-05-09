@@ -37,13 +37,14 @@ while($row = mysqli_fetch_assoc($result))
   $open = $row['Open_Time'];
   $close = $row['Close_Time'];
   $img = getRandomFromArray($imgList);
-  echo "<div class=\"card\" style=\"width:150px\">";
+  echo "<div class=\"card\" style=\"width:200px\">";
   echo "<img class=\"card-img-top\" src=\"",$img,"\" alt=\"Card image\" style=\"width:100%\">";
   echo "<div class=\"card-body\">";
   echo   "<h4 class=\"card-title\">",$name,"</h4>";
   echo   "<p class=\"card-text\">",$location,  "</p>";
   echo   "<p class=\"card-text\">",$cuisine,  "</p>";
-  echo   "<p class=\"card-text\">",$open,$close,  "</p>";
+  echo   "<p class=\"card-text\"> Open time: ",$open,  "</p>";
+  echo   "<p class=\"card-text\"> Close time: ",$close,  "</p>";
   echo "</div>";
   echo "</div>";
 
