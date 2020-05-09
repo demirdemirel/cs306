@@ -34,7 +34,7 @@ if($db->connect_errno > 0){
           <input type="text" id="fname" name="uname" placeholder="Username"required><br>
           <input type="text" id="loc" name="loc" placeholder="Location"required><br>
           <input type="password" id="passw" name="passw" placeholder="Password"required><br><br>
-          <button type="submit" class="btn btn-primary">SEND</button>
+          <button type="submit" class="btn btn-primary my-sm-0">SEND</button>
         </div></div>
 
       </form>
