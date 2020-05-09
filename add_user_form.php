@@ -14,7 +14,7 @@ $sql_statement = "INSERT INTO User(Username,Location,Password)
 
 $result = mysqli_query($db, $sql_statement);
 
-header ("Location: index.php");
+header ("Location: add_user.php");
 
 }
 
