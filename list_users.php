@@ -27,7 +27,7 @@ tr:nth-child(even) {
 
 	<table>
 
-<tr> <th> ID </th> <th> SENDER </th> <th>MESSAGE</th> </tr>
+<tr> <th> USERNAME </th> <th> LOCATION </th> <th>PASSWORD</th> </tr>
 
 <?php
 
