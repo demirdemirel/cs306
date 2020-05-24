@@ -45,7 +45,7 @@ if($db->connect_errno > 0){
 
       <?php include 'list_friendship.php'; ?>
 
-      <form action="add_friendship_form.php" method="POST">
+      <form action="add_delete_friendship_form.php" method="POST">
       <select name="ids">
 
       <?php
@@ -58,6 +58,23 @@ if($db->connect_errno > 0){
       {
         $id = $id_rows['Username'];
         echo "<option value=$id>".$id."</option>";
+      }
+
+      ?>
+      </select>
+
+      <select name="ids1">
+
+      <?php
+
+      $sql_command = "SELECT Username FROM User ";
+
+      $myresult = mysqli_query($db, $sql_command);
+
+      while($id_rows = mysqli_fetch_assoc($myresult))
+      {
+        $id1 = $id_rows['Username'];
+        echo "<option value=$id1>".$id1."</option>";
       }
 
       ?>
