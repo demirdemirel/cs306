@@ -18,7 +18,7 @@ if($db->connect_errno > 0){
 ?>
 <div>
 <div class="container">
-  <h1>User Panel</h1>
+  <h1>Menu Management Panel</h1>
   <div class="row">
     <div class="col-sm-6" style="background-color:lavender;">
       ADD MENU

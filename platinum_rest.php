@@ -28,13 +28,13 @@ if($db->connect_errno > 0){
       <form action="platinum_rest_form.php" method="POST">
          <input type="text" id="fname" name="Promotion_Type" placeholder="Enter the promotion type"><br>
         <div class="form-group row">
-          <label for="example-datetime-local-input" class="col-2 col-form-label">Date and time</label>
+          <label for="example-datetime-local-input" class="col-2 col-form-label">Start date</label>
           <div class="col-10">
             <input name="Member_since" class="form-control" type="datetime-local" value="2011-08-19T13:45:00" id="example-datetime-local-input">
           </div>
         </div>
         <div class="form-group row">
-          <label for="example-datetime-local-input" class="col-2 col-form-label">Date and time</label>
+          <label for="example-datetime-local-input" class="col-2 col-form-label">Finish date</label>
           <div class="col-10">
             <input name= "Expires" class="form-control" type="datetime-local" value="2011-08-19T13:45:00" id="example-datetime-local-input">
           </div>
