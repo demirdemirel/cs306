@@ -18,7 +18,8 @@ if($db->connect_errno > 0){
 ?>
 <div>
 <div class="container">
-  <h1>Review Management Panel</h1>
+  <br>
+  <h2>Review Management Panel</h2>
   <div class="row">
     <div class="col-sm-4" style="background-color:lavender;">
       ADD REVIEW

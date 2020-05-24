@@ -18,6 +18,7 @@ if($db->connect_errno > 0){
 ?>
 <div>
 <div class="container">
+  <br>
   <h2>Platinum User Management Panel</h2>
   <div class="row">
     <div class="col-sm-6" style="background-color:lavender;">

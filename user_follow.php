@@ -18,7 +18,8 @@ if($db->connect_errno > 0){
 ?>
 <div>
 <div class="container">
-  <h1>Friendship Panel</h1>
+  <br>
+  <h2>Friendship Panel</h2>
   <div class="row">
     <div class="col-sm-6" style="background-color:lavender;">
       ADD FRIEND
