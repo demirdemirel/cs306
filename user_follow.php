@@ -43,7 +43,7 @@ if($db->connect_errno > 0){
       DELETE USER
 
 
-      <?php include 'list_friends.php'; ?>
+      <?php include 'list_friendship.php'; ?>
 
       <form action="add_delete_user_form.php" method="POST">
       <select name="ids">
