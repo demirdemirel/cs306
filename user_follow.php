@@ -22,7 +22,7 @@ if($db->connect_errno > 0){
   <div class="row">
     <div class="col-sm-6" style="background-color:lavender;">
       ADD FRIEND
-      <form action="add_user_form.php" method="POST">
+      <form action="add_friendship_form.php" method="POST">
         <div class="row">
         <div class="col-sm-4" style="background-color:lavender;">
           <p>Your Username:</p>
