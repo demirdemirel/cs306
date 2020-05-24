@@ -22,7 +22,7 @@ if($db->connect_errno > 0){
   <div class="row">
     <div class="col-sm-6" style="background-color:lavender;">
       ADD MENU
-      <form action="add_friendship_form.php" method="POST">
+      <form action="add_menu_form.php" method="POST">
         <div class="row">
         <div class="col-sm-4" style="background-color:lavender;">
           <p>Restaurant name:</p>
@@ -43,21 +43,22 @@ if($db->connect_errno > 0){
       DELETE MENU ITEM
 
 
-      <?php include 'list_friendship.php'; ?>
+      <?php include 'list_menu.php'; ?>
 
-      <form action="add_delete_friendship_form.php" method="POST">
+      <form action="add_delete_menu_form.php" method="POST">
       <select name="ids">
 
       <?php
 
-      $sql_command = "SELECT r.Name FROM Restaurant r , Has_in_Menu h WHERE r.Rest_id =h.Rest_id";
+      $sql_command = "SELECT r.Name ,r.Rest_id FROM Restaurant r , Has_in_Menu h WHERE r.Rest_id =h.Rest_id";
 
       $myresult = mysqli_query($db, $sql_command);
 
       while($id_rows = mysqli_fetch_assoc($myresult))
       {
         $id = $id_rows['Name'];
-        echo "<option value=$id>".$id."</option>";
+        $id1 = $id_rows['Rest_id'];
+        echo "<option value=$id1>".$id."</option>";
       }
 
       ?>
@@ -67,13 +68,13 @@ if($db->connect_errno > 0){
 
       <?php
 
-      $sql_command = "SELECT Name FROM Has_in_Menu ";
+      $sql_command = "SELECT DISTINCT(Name)  FROM Has_in_Menu ";
 
       $myresult = mysqli_query($db, $sql_command);
 
-      while($id_rows = mysqli_fetch_assoc($myresult))
+      while($id_rows1 = mysqli_fetch_assoc($myresult))
       {
-        $id1 = $id_rows['Name'];
+        $id1 = $id_rows1['Name'];
         echo "<option value=$id1>".$id1."</option>";
       }
 

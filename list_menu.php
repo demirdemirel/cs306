@@ -27,20 +27,20 @@ tr:nth-child(even) {
 
 	<table>
 
-<tr> <th> USERNAME </th> <th> USERNAME </th>  </tr>
+<tr> <th> RESTAURANT NAME </th> <th> MEAL NAME </th>  </tr>
 
 <?php
 
 include "config.php";
 
-$sql_statement = "SELECT * FROM Has_in_Menu LIMIT 5";
+$sql_statement = "SELECT r.Name restname,h.Name FROM Has_in_Menu h,Restaurant r WHERE r.Rest_id=h.Rest_id LIMIT 5";
 
 $result = mysqli_query($db, $sql_statement);
 
 while($row = mysqli_fetch_assoc($result))
 {
-  $uname = $row['Username_followed'];
-  $uname1 = $row['Username_following'];
+  $uname = $row['restname'];
+  $uname1 = $row['Name'];
 
 	echo "<tr>" . "<th>" . $uname . "</th>" . "<th>" . $uname1 . "</th>" . "</tr>";
 }

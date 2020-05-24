@@ -67,6 +67,7 @@ if($db->connect_errno > 0){
 
 
 
+
       <button class="btn btn-primary">DELETE</button>
       </form>
 
