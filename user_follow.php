@@ -45,7 +45,7 @@ if($db->connect_errno > 0){
 
       <?php include 'list_friendship.php'; ?>
 
-      <form action="add_delete_user_form.php" method="POST">
+      <form action="add_friendship_form.php" method="POST">
       <select name="ids">
 
       <?php
