@@ -44,7 +44,7 @@ function getImagesFromDir($path) {
     if ( $img_dir = @opendir($path) ) {
         while ( false !== ($img_file = readdir($img_dir)) ) {
             // checks for gif, jpg, png
-            if ( preg_match("/(\.jpg|\.jpeg)$/", $img_file) ) {
+            if ( preg_match("/(\.jpg|\.jpeg|\.png)$/", $img_file) ) {
                 $images[] = $img_file;
             }
         }
@@ -74,6 +74,37 @@ $result = mysqli_query($db, $sql_statement);
 echo "<div class=\"container\">";
 echo "<div class=\"row\">";
 
+
+if (mysqli_num_rows($result)==0) {
+//echo "<h2>No results found :(</h2>";
+//echo "<h2>No results found :(</h2> <br> <img src=\"errorimg\sad.png\" alt=\"Paris\" style=\"width:30%\">";
+//echo "<img src=\"errorimg\sad.png\" alt=\"Paris\" style=\"width:30%\">";
+
+echo "
+<style>
+figure {
+ margin-left: auto;
+  margin-right: auto;
+
+}
+
+figcaption {
+  background-color: white;
+  color: black;
+  font-size: 20px;
+  font-style: italic;
+  padding: 4px;
+  text-align: center;
+}
+</style>
+
+
+<figure>
+  <img src=\"errorimg\sad.png\" alt=\"Paris\" style=\"width:99%\" class= \"center\">
+  <figcaption>No results found :(</figcaption>
+</figure>";
+
+}
 
 while($row = mysqli_fetch_assoc($result))
 {
@@ -109,10 +140,12 @@ while($row = mysqli_fetch_assoc($result))
 	$sql_statement1 = "SELECT * FROM Review WHERE Rest_id = (SELECT Rest_id FROM Restaurant WHERE Name= '$name') ";
 
 	$result1 = mysqli_query($db, $sql_statement1);
+
 	echo"<div class=\"col-sm-4\" style=\"background-color:lavender;\">";
 
 	echo "<table>";
 	echo "<tr>" .  "<th>" . "Rate" . "</th>".  "<th>" . "Comment" . "</th>". "<th>" . "Username". "</th>" . "</tr>";
+
 
 	while($row1 = mysqli_fetch_assoc($result1))
 	{
