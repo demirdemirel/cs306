@@ -1,32 +1,52 @@
 <?php
 
 include "config.php";
+include "welcome.html";
 
-if (isset($_POST['Name'])){
+if (isset($_POST['uname'])){
+	$uname = $_POST['uname'];
+	$psw = $_POST['psw'];
+	$loca = $_POST['loca'];
 
-$rname = $_POST['Name'];
-$loc = $_POST['Location'];
-$cus = $_POST['Cuisine'];
-$opent = $_POST['Open_Time'];
-$closet = $_POST['Close_Time'];
+	$sql_statement = "SELECT * FROM user
+						WHERE username = '$uname'";
 
-echo $rname . " " . $loc . " " . $cus . " " . $opent . " ". $closet . "<br>";
+	$result = mysqli_query($db, $sql_statement);
 
-$sql_statement = "INSERT INTO restaurant(Name,Location,Cuisine,Open_Time,Close_Time)
-					VALUES ('$rname','$loc','$cus','$opent','$closet')";
+	if ($uname == "admin" or mysqli_num_rows($result)!=0) {
+		echo
+		"<style>
+		figure {
+		 	margin-left: 10 px;
+		  margin-right: auto;
+		}
 
-$result = mysqli_query($db, $sql_statement);
+		figcaption {
+		  background-color: white;
+		  color: black;
+		  font-size: 20px;
+		  font-style: italic;
+		  padding: 4px;
+		  text-align: center;
+		}
+		</style>
 
-header ("Location: add_restaurant.php");
+		<figure>
+		  <img src=\"errorimg\sad.png\" alt=\"Paris\" style=\"width:10%\" class= \"center\">
+		  <figcaption>Username already exists, please press the logo to retry.</figcaption>
+		</figure>";
+	}
+	else {
+		$sql_statement = "INSERT INTO User(Username,Location,Password)
+							VALUES ('$uname','$loca','$psw')";
 
+		$result = mysqli_query($db, $sql_statement);
+
+		header ("Location: index_user.php");
+	}
 }
-
-else
-{
-
+else {
 	echo "The form is not set.";
-
 }
-
 
 ?>

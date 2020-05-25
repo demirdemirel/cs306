@@ -69,7 +69,7 @@ span.psw {
 </head>
 <body>
 
-<form action="/action_page.php" method="post">
+<form action="signup_form.php" method="post">
   <div class="imgcontainer">
     <img src="errorimg\login.png" alt="Avatar" class="avatar" style="width:20%">
   </div>
@@ -83,7 +83,7 @@ span.psw {
 
     <label for="loca"><b>Location</b></label>
     <input type="text" placeholder="Enter Location" name="loca" required>
-        
+
     <button type="submit">Login</button>
   </div>
 </form>
