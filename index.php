@@ -31,6 +31,7 @@ $sql_statement = "SELECT * FROM Restaurant";
 $result = mysqli_query($db, $sql_statement);
 echo "<div class=\"container\">";
 echo "<div class=\"card-columns\">";
+
 while($row = mysqli_fetch_assoc($result))
 {
   $id = $row['Rest_id'];
