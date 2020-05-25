@@ -61,7 +61,7 @@ function getImagesFromDir($path) {
     if ( $img_dir = @opendir($path) ) {
         while ( false !== ($img_file = readdir($img_dir)) ) {
             // checks for gif, jpg, png
-            if ( preg_match("/(\.jpg|\.jpeg)$/", $img_file) ) {
+            if ( preg_match("/(\.jpg|\.jpeg|\.png)$/", $img_file) ) {
                 $images[] = $img_file;
             }
         }
