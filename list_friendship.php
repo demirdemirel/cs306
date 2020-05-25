@@ -27,20 +27,20 @@ tr:nth-child(even) {
 
 	<table>
 
-<tr> <th> USERNAME </th> <th> USERNAME </th>  </tr>
+<tr> <th> FOLLOWER </th> <th> FOLLOWING </th>  </tr>
 
 <?php
 
 include "config.php";
 
-$sql_statement = "SELECT * FROM User_Follows LIMIT 5";
+$sql_statement = "SELECT * FROM User_Follows";
 
 $result = mysqli_query($db, $sql_statement);
 
 while($row = mysqli_fetch_assoc($result))
 {
-  $uname = $row['Username_followed'];
-  $uname1 = $row['Username_following'];
+  $uname1 = $row['Username_followed'];
+  $uname = $row['Username_following'];
 
 	echo "<tr>" . "<th>" . $uname . "</th>" . "<th>" . $uname1 . "</th>" . "</tr>";
 }

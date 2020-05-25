@@ -2,6 +2,8 @@
 
 include "config.php";
 
+session_start();
+
 if (isset($_POST['uname'])){
 
 $Username = $_POST['uname'];
@@ -17,8 +19,13 @@ $result = mysqli_query($db, $sql_statement);
 
 }
 
+if( $_SESSION['username'] == "admin"){
 header ("Location: user_follow.php");
 
+}
+else{
+header ("Location: add_friend_user.php");
+}
 }
 
 else

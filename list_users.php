@@ -33,7 +33,7 @@ tr:nth-child(even) {
 
 include "config.php";
 
-$sql_statement = "SELECT * FROM User LIMIT 5";
+$sql_statement = "SELECT * FROM User";
 
 $result = mysqli_query($db, $sql_statement);
 

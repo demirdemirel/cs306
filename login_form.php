@@ -9,6 +9,9 @@ $uname = $_POST['uname'];
 $psw = $_POST['psw'];
 
 if($uname == "admin" && $psw == "cs306"){
+  session_start();
+
+  $_SESSION['username'] = $uname;
 	header ("Location: index.php");
 }
 

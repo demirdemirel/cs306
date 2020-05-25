@@ -1,5 +1,5 @@
 <html>
-<?php include 'welcome.html'; ?>
+<?php include 'user.html'; ?>
 <head>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
@@ -7,10 +7,9 @@
 </head>
 
 <?php session_start(); ?>
-<h3 style="text-align:center;"> Session Info: <?php echo $_SESSION['username'] ?>  </h3><br>
+<h3 style="text-align:center;"> Welcome  <?php echo $_SESSION['username'] ?>  </h3><br>
 
-
-<body>
+<h3 style="text-align:center;"> Choose From People's Favorite Resturants </h3><br>
 
 <?php
 $db = mysqli_connect('localhost','root','','cs306');
@@ -21,114 +20,61 @@ if($db->connect_errno > 0){
 
 ?>
 
-
-<div>
-<div class="container">
-  <br>
-  <h2>User Query Panel</h2>
-  <div class="row">
-    <div class="col-sm-6" style="background-color:lavender;">
-      QUERY PARAMETERS
-      <form action="user_query_form.php" method="POST">
-        <div class="row">
-        <div class="col-sm-4" style="background-color:lavender;">
-
-          <p>Username:</p>
-          <p>Location:</p>
-          <p>Cuisine:</p>
-          <p>Open Time: </p>
-          <p>Close Time: </p>
-
-        </div>
-        <div class="col-sm-3" style="background-color:lavender;">
-          <input type="text" id="rname" name="Name" placeholder="Restaurant Name"required><br>
-          <input type="text" id="loc" name="Location" placeholder="Location"required><br>
-          <input type="text" id="cus" name="Cuisine" placeholder="Cuisine"required><br><br>
-          <input type="time" id="opent" name="Open_Time" placeholder="Open Time"required><br>
-          <input type="time" id="closet" name="Close_Time" placeholder="Close Time"required><br>
-          <button type="submit" class="btn btn-primary">QUERY</button>
-        </div></div>
-
-      </form>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<?php
+$root = '';
+$path = './';
+$imgList = getImagesFromDir($root . $path);
 
 
-    </div>
-    <div class="col-sm-6" style="background-color:lavenderblush;">
-      QUERY RESULT
+$sql_statement = "SELECT * FROM Restaurant";
+
+$result = mysqli_query($db, $sql_statement);
+echo "<div class=\"container\">";
+echo "<div class=\"card-columns\">";
+
+while($row = mysqli_fetch_assoc($result))
+{
+  $id = $row['Rest_id'];
+  $name = $row['Name'];
+  $location = $row['Location'];
+  $cuisine = $row['Cuisine'];
+  $open = $row['Open_Time'];
+  $close = $row['Close_Time'];
+  $img = getRandomFromArray($imgList);
+  echo "<div class=\"card\" style=\"width:200px\">";
+  echo "<img class=\"card-img-top\" src=\"",$img,"\" alt=\"Card image\" style=\"width:100%\">";
+  echo "<div class=\"card-body\">";
+ echo   "<h4 class=\"card-title\">",$name,"</h4>";
+  echo   "<p class=\"card-text\"> Located in ",$location,  "</p>";
+  echo   "<p class=\"card-text\"> Cuisine: ",$cuisine,  "</p>";
+  echo   "<p class=\"card-text\"> Open time: ",$open,  "</p>";
+  echo   "<p class=\"card-text\"> Close time: ",$close,  "</p>";
+  echo "</div>";
+  echo "</div>";
 
 
-      <!DOCTYPE html>
-
-      <head>
-
-      <style>
-      table {
-        font-family: arial, sans-serif;
-        border-collapse: collapse;
-        width: 100%;
-      }
-
-      td, th {
-        border: 1px solid #dddddd;
-        text-align: left;
-        padding: 8px;
-      }
-
-      tr:nth-child(even) {
-        background-color: #dddddd;
-      }
-      </style>
-
-      </head>
-      <body>
-
-      <div align="center">
-
-        <table>
-
-      <tr> <th> RESTAURANT NAME </th> <th> LOCATION </th> <th>CUISINE</th> </tr>
-
-
-      <?php
-        if (isset($_POST['result'])){
-
-        $result = $_POST['result'];
-
-
-
-        while($row = mysqli_fetch_assoc($result))
-        {
-          $name = $row['Name'];
-          $loc = $row['Location'];
-        	$cus = $row['Cuisine'];
-
-        	echo "<tr>" . "<th>" . $name . "</th>" . "<th>" . $loc . "</th>" . "<th>" . $cus . "</th>" . "</tr>";
+}
+echo "</div>";
+echo "</div>";
+function getImagesFromDir($path) {
+    $images = array();
+    if ( $img_dir = @opendir($path) ) {
+        while ( false !== ($img_file = readdir($img_dir)) ) {
+            // checks for gif, jpg, png
+            if ( preg_match("/(\.jpg|\.jpeg|\.png)$/", $img_file) ) {
+                $images[] = $img_file;
+            }
         }
+        closedir($img_dir);
+    }
+    return $images;
+}
 
-
-
-
-
-
-        }
-      ?>
-
-
-    </table>
-    </div>
-
-    </body>
-
-
-
-    </div>
-  </div>
-</div>
-</div>
-
-
-
-
-
+function getRandomFromArray($ar) {
+    $num = array_rand($ar);
+    return $ar[$num];
+}
+?>
 </body>
 </html>

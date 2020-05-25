@@ -33,7 +33,7 @@ tr:nth-child(even) {
 
 include "config.php";
 
-$sql_statement = "SELECT * FROM Food LIMIT 5";
+$sql_statement = "SELECT * FROM Food";
 
 $result = mysqli_query($db, $sql_statement);
 

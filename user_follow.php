@@ -26,13 +26,13 @@ if($db->connect_errno > 0){
       <form action="add_friendship_form.php" method="POST">
         <div class="row">
         <div class="col-sm-4" style="background-color:lavender;">
-          <p>Your Username:</p>
-          <p>Friend Username:</p>
+          <p>Follower Name:</p>
+          <p>Following Name:</p>
 
         </div>
         <div class="col-sm-3" style="background-color:lavender;">
-          <input type="text" id="fname" name="uname" placeholder="Username"required><br>
-          <input type="text" id="fname2" name="uname2" placeholder="Username"required><br>
+          <input type="text" id="fname" name="uname2" placeholder="Username"required><br>
+          <input type="text" id="fname2" name="uname" placeholder="Username"required><br>
           <button type="submit" class="btn btn-primary my-sm-0">SEND</button>
         </div></div>
 
@@ -47,23 +47,6 @@ if($db->connect_errno > 0){
       <?php include 'list_friendship.php'; ?>
 
       <form action="add_delete_friendship_form.php" method="POST">
-      <select name="ids">
-
-      <?php
-
-      $sql_command = "SELECT Username FROM User";
-
-      $myresult = mysqli_query($db, $sql_command);
-
-      while($id_rows = mysqli_fetch_assoc($myresult))
-      {
-        $id = $id_rows['Username'];
-        echo "<option value=$id>".$id."</option>";
-      }
-
-      ?>
-      </select>
-
       <select name="ids1">
 
       <?php
@@ -81,6 +64,25 @@ if($db->connect_errno > 0){
       ?>
       </select>
 
+
+      <select name="ids">
+
+      <?php
+
+      $sql_command = "SELECT Username FROM User";
+
+      $myresult = mysqli_query($db, $sql_command);
+
+      while($id_rows = mysqli_fetch_assoc($myresult))
+      {
+        $id = $id_rows['Username'];
+        echo "<option value=$id>".$id."</option>";
+      }
+
+      ?>
+      </select>
+
+      
       <button class="btn btn-primary">DELETE</button>
       </form>
 

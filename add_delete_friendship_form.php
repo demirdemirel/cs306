@@ -1,6 +1,7 @@
 <?php
 
 include "config.php";
+session_start();
 
 if (isset($_POST['ids'])){
 
@@ -17,8 +18,12 @@ $sql_statement = "DELETE FROM User_Follows WHERE username_followed = '$selection
 
 $result = mysqli_query($db, $sql_statement);
 
+if( $_SESSION['username'] == "admin"){
 header ("Location: user_follow.php");
-//echo "$selection_id";
+
+}
+else {
+header ("Location: add_friend_user.php");}
 }
 
 else

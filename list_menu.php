@@ -33,7 +33,7 @@ tr:nth-child(even) {
 
 include "config.php";
 
-$sql_statement = "SELECT r.Name restname,h.Name FROM Has_in_Menu h,Restaurant r WHERE r.Rest_id=h.Rest_id LIMIT 5";
+$sql_statement = "SELECT r.Name restname,h.Name FROM Has_in_Menu h,Restaurant r WHERE r.Rest_id=h.Rest_id";
 
 $result = mysqli_query($db, $sql_statement);
 

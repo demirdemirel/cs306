@@ -8,6 +8,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
   </head>
+ <h3 style="text-align:center;"> Welcome back admin </h3>
 <h3 style="text-align:center;"> Choose From People's Favorite Resturants </h3><br>
 
 <?php

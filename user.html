@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+</head>
+
+
+<body>
+
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <a class="navbar-brand" href="welcome.php">HungryDB</a>
+
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="/cs306/index_user.php">Home</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbardrop1" data-toggle="dropdown">
+          Users
+        </a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="/cs306/add_friend_user.php">Follow Users</a>
+          <a class="dropdown-item" href="user_meal.php">Add Favorite Foods </a>
+        </div>
+      </li>
+
+            <!-- Restraurant Adding -->
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbardrop1" data-toggle="dropdown">
+          Restaurants
+        </a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="/cs306/user_add_review.php">Review Restaurant</a>
+        </div>
+
+      </li>
+
+      <!-- Dropdown -->
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbardrop2" data-toggle="dropdown">
+          Platinium
+        </a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="/cs306/user_platinum_info.php">Information and Pricing</a>
+        </div>
+      </li>
+
+
+
+      <form class="form-inline " action="user_search_restaurant.php" method="POST">
+        <input class="form-control mr-sm-2 " type="search" id="rest" name="rest" placeholder="Search Restaurant">
+        <button class="btn btn-success " type="submit">Search</button>
+      </form>
+
+      <a class="nav-link" href="#">Advanced Search</a>
+    
+</ul>
+
+</div>
+</nav>
+
+</body>
+</html>

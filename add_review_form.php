@@ -1,7 +1,7 @@
 <?php
 
 include "config.php";
-
+session_start();
 if (isset($_POST['uname'])){
 
 $Username = $_POST['uname'];
@@ -15,7 +15,17 @@ $sql_statement = "INSERT INTO Review(Rating,Rest_id,Comment,Username)
 
 $result = mysqli_query($db, $sql_statement);
 
+
+if( $_SESSION['username'] == "admin"){
 header ("Location: add_review.php");
+
+}
+else{
+header ("Location: user_add_review.php");
+}
+
+
+
 
 }
 
