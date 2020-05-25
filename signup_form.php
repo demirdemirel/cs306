@@ -42,6 +42,10 @@ if (isset($_POST['uname'])){
 
 		$result = mysqli_query($db, $sql_statement);
 
+		session_start();
+
+		$_SESSION['username'] = $uname;
+
 		header ("Location: index_user.php");
 	}
 }

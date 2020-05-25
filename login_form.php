@@ -21,11 +21,15 @@ $result = mysqli_query($db, $sql_statement);
 $row = mysqli_fetch_assoc($result);
 
 if($row['password'] == $psw){
-header ("Location: index_user.php");
+	session_start();
+
+	$_SESSION['username'] = $uname;
+
+	header ("Location: index_user.php");
 }
 
 else{
-echo 
+echo
 "<style>
 figure {
  	margin-left: 10 px;
