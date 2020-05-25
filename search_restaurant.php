@@ -70,6 +70,7 @@ $selection_id = $_POST['rest'];
 $sql_statement = "SELECT * FROM Restaurant WHERE Name LIKE '%$selection_id%'  ";
 
 $result = mysqli_query($db, $sql_statement);
+
 echo "<div class=\"container\">";
 echo "<div class=\"row\">";
 
@@ -77,30 +78,30 @@ echo "<div class=\"row\">";
 while($row = mysqli_fetch_assoc($result))
 {
 	echo"<div class=\"col-sm-4\" style=\"background-color:lavender;\">";
-	echo "<div class=\"container\">";
-echo "<div class=\"card-columns\">";
-		//header ("Location: restaurant_menu.php");
+		echo "<div class=\"container\">";
+			echo "<div class=\"card-columns\">";
+			//header ("Location: restaurant_menu.php");
 
-				  $id = $row['Rest_id'];
-				  $name = $row['Name'];
-					$location = $row['Location'];
-				  $cuisine = $row['Cuisine'];
-				  $open = $row['Open_Time'];
-				  $close = $row['Close_Time'];
-				  $img = getRandomFromArray($imgList);
-				  echo "<div class=\"card\" style=\"width:200px\">";
-				  echo "<img class=\"card-img-top\" src=\"",$img,"\" alt=\"Card image\" style=\"width:100%\">";
-					  echo "<div class=\"card-body\">";
+			  $id = $row['Rest_id'];
+			  $name = $row['Name'];
+				$location = $row['Location'];
+			  $cuisine = $row['Cuisine'];
+			  $open = $row['Open_Time'];
+			  $close = $row['Close_Time'];
+			  $img = getRandomFromArray($imgList);
+			  echo "<div class=\"card\" style=\"width:200px\">";
+			  	echo "<img class=\"card-img-top\" src=\"",$img,"\" alt=\"Card image\" style=\"width:100%\">";
+				  echo "<div class=\"card-body\">";
 					 	echo   "<h4 class=\"card-title\">",$name,"</h4>";
 					  echo   "<p class=\"card-text\"> Located in ",$location,  "</p>";
 					  echo   "<p class=\"card-text\"> Cuisine: ",$cuisine,  "</p>";
 					  echo   "<p class=\"card-text\"> Open time: ",$open,  "</p>";
 					  echo   "<p class=\"card-text\"> Close time: ",$close,  "</p>";
-					  echo "</div>";
 				  echo "</div>";
+			  echo "</div>";
 
-					echo "</div>";
-					echo "</div>";
+			echo "</div>";
+		echo "</div>";
 
 
 
@@ -124,7 +125,8 @@ echo "<div class=\"card-columns\">";
 		echo "<tr>" . "<th>" . $rate . "</th>".  "<th>" . $comment . "</th>". "<th>" . $uname . "</th>" . "</tr>";
 	}
 	echo "</table>";
-echo "</div>";echo "</div>";
+echo "</div>";
+echo "</div>";
 	}
 
 
