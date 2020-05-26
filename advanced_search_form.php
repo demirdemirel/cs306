@@ -84,7 +84,7 @@ array_push($a," AND ");
 }
 if (isset($_POST['cbox6'])){
 $rate= $_POST['rate'];
-$rate= "Rest_id IN (SELECT Rest_id FROM Review WHERE $rate < (SELECT AVG(Rating) FROM Review)) ";
+$rate= "Rest_id IN (SELECT r.Rest_id FROM Review r WHERE $rate <= (SELECT AVG(rev.Rating) FROM Review rev WHERE rev.Rest_id = r.Rest_id)) ";
 array_push($a,$rate);
 array_push($a," AND ");
 }
