@@ -64,7 +64,7 @@ echo "</div>";}
 
 echo "<h3 style=\"text-align:center;\"> Choose From People's Favorite Resturants </h3><br>";
 
-$sql_statement = "SELECT * FROM Restaurant LIMIT 6";
+$sql_statement = "SELECT * FROM Restaurant";
 
 $result = mysqli_query($db, $sql_statement);
 echo "<div class=\"container\">";
