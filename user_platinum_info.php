@@ -86,7 +86,7 @@ if($db->connect_errno > 0){
   With Platinum membership, you can eat and drink at your favorite places in town with amazing discounts.
   You can select from our two plan types; monthly or yearly.
   Try it for free!</p>
-  
+
 </div>
 </div>
 
@@ -97,7 +97,7 @@ if($db->connect_errno > 0){
     <li class="grey">2 Weeks</li>
     <li>A drink or a meal daily</li>
     <li>Choose from 20+ restaurants</li>
-    <li class="grey"><a href="#" class="button">Sign Up</a></li>
+    <li class="grey"><a href="user_platinum_form.php" class="button">Sign Up</a></li>
   </ul>
 </div>
 
@@ -107,7 +107,7 @@ if($db->connect_errno > 0){
     <li class="grey">$ 9.99 / month</li>
     <li>A drink and a meal daily</li>
     <li>Choose from 50+ restaurants</li>
-    <li class="grey"><a href="#" class="button">Sign Up</a></li>
+    <li class="grey"><a href="user_platinum_form.php" class="button">Sign Up</a></li>
   </ul>
 </div>
 
@@ -117,7 +117,7 @@ if($db->connect_errno > 0){
     <li class="grey">$ 99.99 / year</li>
     <li>Unlimited offers</li>
     <li>Choose from 90+ restaurants</li>
-    <li class="grey"><a href="#" class="button">Sign Up</a></li>
+    <li class="grey"><a href="user_platinum_form.php" class="button">Sign Up</a></li>
   </ul>
 </div>
 
