@@ -121,7 +121,7 @@ while($row = mysqli_fetch_assoc($result))
   echo "<img class=\"card-img-top\" src=\"",$img,"\" alt=\"Card image\" style=\"width:100%\">";
   echo "<div class=\"card-body\">";
   echo   "<h4 class=\"card-title\">",$name,"</h4>";
-  echo   "<h4 class=\"card-title\">",$friend," Gives ",$rate," Star</h4>";
+  echo   "<h4 class=\"card-title\">",$friend," gives ",$rate," Star</h4>";
   echo   "<p class=\"card-text\"> Located in ",$location,  "</p>";
   echo   "<p class=\"card-text\"> Cuisine: ",$cuisine,  "</p>";
   echo   "<p class=\"card-text\"> Open time: ",$open,  "</p>";
