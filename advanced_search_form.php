@@ -72,13 +72,13 @@ array_push($a," AND ");
 
 if (isset($_POST['cbox3'])){
 $otime= $_POST['otime'];
-$otime= "Open_Time= $otime";
+$otime= "Open_Time >= '$otime'";
 array_push($a,$otime);
 array_push($a," AND ");
 }
 if (isset($_POST['cbox4'])){
 $ctime= $_POST['ctime'];
-$ctime= "Close_Time= $ctime";
+$ctime= "Close_Time >='$ctime'";
 array_push($a,$ctime);
 array_push($a," AND ");
 }
