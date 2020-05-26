@@ -63,7 +63,7 @@ $sql_statement = "SELECT * FROM Review r1, Restaurant r    WHERE r1.Username IN 
 
 $result = mysqli_query($db, $sql_statement);
 if(mysqli_num_rows($result)==0){}
-else{echo "<h3 style=\"text-align:center;\"> Choose From Your Friend's Favorite Resturants </h3><br>";
+else{echo "<h3 style=\"text-align:center;\"> See What Your Friends' Reviews Are </h3><br>";
 echo "<div class=\"container\">";
 echo "<div class=\"card-columns\">";
 
