@@ -58,11 +58,12 @@ while($row = mysqli_fetch_assoc($result))
 echo "</div>";
 echo "</div>";
 
-echo "<h3 style=\"text-align:center;\"> Choose From Your Friend's Favorite Resturants </h3><br>";
 $useeer=$_SESSION['username'];
 $sql_statement = "SELECT * FROM Review r1, Restaurant r    WHERE r1.Username IN (SELECT u.Username_following FROM User_Follows u WHERE u.Username_followed='$useeer') AND r1.Rest_id=r.Rest_id LIMIT 6";
 
 $result = mysqli_query($db, $sql_statement);
+if(mysqli_num_rows($result)==0){}
+else{echo "<h3 style=\"text-align:center;\"> Choose From Your Friend's Favorite Resturants </h3><br>";
 echo "<div class=\"container\">";
 echo "<div class=\"card-columns\">";
 
@@ -92,7 +93,8 @@ while($row = mysqli_fetch_assoc($result))
 
 }
 echo "</div>";
-echo "</div>";
+echo "</div>";}
+
 
 
 function getImagesFromDir($path) {
