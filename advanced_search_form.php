@@ -1,6 +1,6 @@
 <html>
 
-<?php include 'base.html'; ?>
+<?php include 'user.html'; ?>
 <body>
 <head>
 	<style>
@@ -59,13 +59,13 @@ array_push($a," AND ");
 }
 if (isset($_POST['cbox2'])){
 $loc= $_POST['loc'];
-$loc= "Location= '%$loc%'";
+$loc= "Location LIKE '%$loc%'";
 array_push($a,$loc);
 array_push($a," AND ");
 }
 if (isset($_POST['cbox5'])){
 $cuis= $_POST['cuis'];
-$cuis= "Cuisine= '%$cuis%'";
+$cuis= "Cuisine LIKE '%$cuis%'";
 array_push($a,$cuis);
 array_push($a," AND ");
 }

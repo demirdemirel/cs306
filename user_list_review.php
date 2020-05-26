@@ -27,7 +27,7 @@ tr:nth-child(even) {
 
 	<table>
 
-<tr>  <th> Rating </th><th> Restaurant Name </th><th> Comment </th>  </tr>
+<tr>  <th> Rating id </th><th> Rating </th><th> Restaurant Name </th><th> Comment </th>  </tr>
 
 <?php
 
@@ -46,7 +46,7 @@ while($row = mysqli_fetch_assoc($result))
   $comment = $row['Comment'];
   $uname = $row['Username'];
 
-	echo "<tr>" .  "<th>" . $rate . "</th>". "<th>" . $restid . "</th>". "<th>" . $comment . "</th>".  "</tr>";
+	echo "<tr>" .  "<th>" . $rateid . "</th>" . "<th>" . $rate . "</th>". "<th>" . $restid . "</th>". "<th>" . $comment . "</th>".  "</tr>";
 }
 
 ?>
