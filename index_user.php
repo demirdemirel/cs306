@@ -58,6 +58,46 @@ while($row = mysqli_fetch_assoc($result))
 echo "</div>";
 echo "</div>";
 
+
+$useeer=$_SESSION['username'];
+$sql_statement = "SELECT* FROM Restaurant r,Platinium_Program_Member p WHERE  p.Rest_id=r.Rest_id LIMIT 6";
+
+$result = mysqli_query($db, $sql_statement);
+if(mysqli_num_rows($result)==0){}
+else{echo "<h3 style=\"text-align:center;\"> See Platinum Restaurants </h3><br>";
+echo "<div class=\"container\">";
+echo "<div class=\"card-columns\">";
+
+while($row = mysqli_fetch_assoc($result))
+{
+  $id = $row['Rest_id'];
+  $name = $row['Name'];
+  $location = $row['Location'];
+  $cuisine = $row['Cuisine'];
+  $open = $row['Open_Time'];
+  $close = $row['Close_Time'];
+  $friend =$row['Promotion_type'];
+  //$rate =$row['Rating'];
+  $img = getRandomFromArray($imgList);
+  echo "<div class=\"card\" style=\"width:200px\">";
+  echo "<img class=\"card-img-top\" src=\"",$img,"\" alt=\"Card image\" style=\"width:100%\">";
+  echo "<div class=\"card-body\">";
+  echo   "<h4 class=\"card-title\">",$name,"</h4>";
+  echo   "<h4 class=\"card-title\"> Platinum Restaurant ",$friend," Promotion </h4>";
+  echo   "<p class=\"card-text\"> Located in ",$location,  "</p>";
+  echo   "<p class=\"card-text\"> Cuisine: ",$cuisine,  "</p>";
+  echo   "<p class=\"card-text\"> Open time: ",$open,  "</p>";
+  echo   "<p class=\"card-text\"> Close time: ",$close,  "</p>";
+  echo "</div>";
+  echo "</div>";
+
+
+}
+echo "</div>";
+echo "</div>";}
+
+
+
 $useeer=$_SESSION['username'];
 $sql_statement = "SELECT * FROM Review r1, Restaurant r    WHERE r1.Username IN (SELECT u.Username_followed FROM User_Follows u WHERE u.Username_following='$useeer') AND r1.Rest_id=r.Rest_id LIMIT 6";
 
