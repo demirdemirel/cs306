@@ -6,7 +6,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 </head>
 
-<?php session_start(); ?>
+<?php //session_start(); ?>
 <h3 style="text-align:center;"> Welcome  <?php echo $_SESSION['username'] ?>  </h3><br>
 
 <h3 style="text-align:center;"> Choose From People's Favorite Resturants </h3><br>

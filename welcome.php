@@ -13,11 +13,13 @@
  <h4 style="text-align:center;">Explore local restaurants and socialize with foodies just like you! </h4><br>
 
 <?php
+
 $db = mysqli_connect('localhost','root','','cs306');
 
 if($db->connect_errno > 0){
   die('Unable to connect to database [' . $db->connect_error . ']');
 }
+
 
 ?>
 
@@ -41,7 +43,7 @@ body {
   border-radius: 5px;
   background-color: #f2f2f2;
   padding: 10px 0 30px 0;
-} 
+}
 
 /* style inputs and link buttons */
 input,
@@ -149,7 +151,7 @@ input[type=submit]:hover {
         </a>
       </div>
       </div>
-      
+
     </div>
   </form>
 </div>
