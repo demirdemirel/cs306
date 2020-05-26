@@ -91,24 +91,26 @@ if($db->connect_errno > 0){
 
   </div>
 
+  <br>
+  <h4>Your favourite meals are availible in these restaurants: </h4>
   <table>
-    <tr> <th>Rate</th> <th>Restaurant Name</th> <th>Cuisine</th> </tr>
+    <tr>  <th>Restaurant Name</th> <th>Cuisine</th> </tr>
     <?php
 
-    $sql_command = "SELECT re.Rating, r.Name, r.Cuisine FROM Prefers p,Restaurant r, Has_in_Menu h,Review re WHERE p.Username='$sessionName' AND p.Username=re.Username AND p.Name=h.Name AND r.Rest_id=h.Rest_id AND re.Rest_id=h.Rest_id";
+    $sql_command = "SELECT r.Name, r.Cuisine FROM Prefers p,Restaurant r, Has_in_Menu h WHERE p.Username='$sessionName' AND p.Name=h.Name AND r.Rest_id=h.Rest_id";
 
     $myresult = mysqli_query($db, $sql_command);
 
     while($row1 = mysqli_fetch_assoc($myresult))
     {
       //$rateid = $row1['Rate_id'];
-  	  $rate = $row1['Rating'];
+
   	  //$restid = $row1['Rest_id'];
   	  $comment = $row1['Name'];
   	  //$uname = $row1['Username'];
       $cuisine =$row1['Cuisine'];
 
-  		echo "<tr>" . "<th>" . $rate . "</th>".  "<th>" . $comment . "</th>". "<th>" . $cuisine . "</th>" . "</tr>";
+  		echo "<tr>" . "<th>" . $comment . "</th>". "<th>" . $cuisine . "</th>" . "</tr>";
 
     }
 
